@@ -8,6 +8,12 @@ $grid-gasp: ( //przerwy miedzy elemntami kolumnami
     "3": 30px,
 ); // MUSI BYC SREDNIK NA KONCU
 
+//justify content - lista w sassie zamiast map
+$layout-values: flex-start, flex-end, center, space-between, space-around;
+//justify-flex-end wyrownuje do prawej jak ma wolne miejsce
+// justify-center wysrodkowuje elemnty
+
+
 //base-layout
 .container { //bazowy czesto kontekst na środku strony
     width: 100%;
@@ -34,6 +40,14 @@ $grid-gasp: ( //przerwy miedzy elemntami kolumnami
     .gap-#{$key} {
         margin-left: -$val; //ujemny margin
         margin-right: -$val; //ujemny margines
+    }
+}
+
+//justify content classes
+//foreach po liscie - tylko jedna zmienna
+@each $val in $layout-values {
+    .justify-#{$val} {
+        justify-content: $val;
     }
 }
 
