@@ -1,6 +1,12 @@
 @use "sass:math";
 
 $grid-coulmns:12; // dużo systemów siatek 12 kolumnowych
+$grid-gasp: ( //przerwy miedzy elemntami kolumnami
+    "0": 0,
+    "1": 10px,
+    "2": 20px,
+    "3": 30px,
+); // MUSI BYC SREDNIK NA KONCU
 
 //base-layout
 .container { //bazowy czesto kontekst na środku strony
@@ -15,6 +21,22 @@ $grid-coulmns:12; // dużo systemów siatek 12 kolumnowych
     display: flex;
     flex-flow: row wrap; // na dol jak sie nie miesci
 }
+
+
+//grip gaps jak doda sie ta klase wierszowi row to wszsytkie lemnty maja padding
+@each $key, $val in $grid-gasp {
+    .gap-#{$key} > * { // gwiazda oznacza dowolny elemnt, czy to div czy to paragraf - kazdy elemnt flexowy ktory ma te klase
+        //dodanie paddingi do elemntu
+        padding: $val;
+    }
+    //usuwanie paddingu po lewej z pierwszego elemntu i prawego paddingu elemntu sotatniego po prawej
+    // przez ujemny margines
+    .gap-#{$key} {
+        margin-left: -$val; //ujemny margin
+        margin-right: -$val; //ujemny margines
+    }
+}
+
 
 //mozna zrefaktorowac powtarzalny kod dla roznych ekranow do jakiego mixina 
 //col classes
