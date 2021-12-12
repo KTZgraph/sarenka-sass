@@ -1,0 +1,37 @@
+// petla; key, val wewnetrzne zmienne 
+@each $key, $val in $colors {
+    //generowanie klas
+    .text-#{$key} {
+        color: $val
+    }
+    .bg-#{$key} {
+        background-color: $val;
+    }
+
+    //light variations - petla for
+    @for $i from 1 through 9 {
+        .text-#{$key}-light-#{$i} { // kolor tekstu
+            color: mix(white, $val, $i * 10) //mixownie z bialym, kolor, procentowa mieszanka ile bialego 9 - najjasniejsze
+        }
+        .bg-#{$key}-light-#{$i} { // tlo
+            background-color: mix(white, $val, $i * 10) //mixownie z bialym, kolor, procentowa mieszanka ile bialego 9 - najjasniejsze
+        }
+    }
+
+    //dark variations - petla for
+    @for $i from 1 through 9 {
+        .text-#{$key}-dark-#{$i} { // kolor tekstu
+            color: mix(white, $val, $i * 10) //mixownie z czarnym, kolor, procentowa mieszanka ile czarnego 9 - najciemniejsze
+        }
+        .bg-#{$key}-dark-#{$i} { // tlo
+            background-color: mix(black, $val, $i * 10) //mixownie z czarnym, kolor, procentowa mieszanka ile bialego 9 - najciemniejsze
+        }
+    }
+}
+
+
+
+// .text-primary-light-1
+// .text-primary-light-9
+// .text-primary-dark-1
+// .text-primary-dark-9
