@@ -26,3 +26,11 @@
         @extend %flex-layout;
     }
 }
+
+//rozszerzenie klasy nav zeby bylo kilka wersji kolorow
+@each $key, $val in $colors {
+    .navbar-#{$key} {
+        @extend .navbar;
+        background-color: $val;
+    }
+}
