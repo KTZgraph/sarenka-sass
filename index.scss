@@ -29,8 +29,34 @@ img {
   max-width: 100%;
 }
 
+//variables
+$primary: #326dee;
+$secondary: #1ac888;
+$error: #d32752;
+$info: #f6c31c;
+
+
 h1 {
-  a {
-    color: blue;
-  }
+color: $primary;
+}
+a {
+    color: $secondary
+}
+button{
+    color: white;
+    border:0;
+    background: $primary;
+}
+
+.error {
+    color: $error;
+    border-color: $error;
+    border-style: solid;
+}
+
+.notification {
+    color: $secondary;
+    border-color: $secondary;
+    border-style: solid;
+
 }

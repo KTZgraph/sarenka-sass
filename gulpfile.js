@@ -1,8 +1,8 @@
 const {src, dest, watch, series} = require('gulp');
-const sass = require('gulp-sass')(require('sass'))
+const sass = require('gulp-sass')(require('sass'));
 
 function buildStyles() {
-    return src('index.css') // wejsciowy plik
+    return src('index.scss') // wejsciowy plik
         .pipe(sass())
         .pipe(dest('css')) // wyjsociwy foldrer
 }
