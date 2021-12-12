@@ -25,6 +25,14 @@
         &:hover{
             background-color: $val;
         }
-
+    }
+    .btn-complement-#{$key}{
+        @include btn($val);
+        //nadpisanie koloru przycisku
+        color: light-comp($val);
+        &:hover {
+            color: $val;
+            background-color: light-comp($val);
+        }
     }
 }
