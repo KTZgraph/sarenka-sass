@@ -4,6 +4,23 @@
     .text-#{$key} {
         color: $val
     }
+
+    // .text-hover-#{$key}:hover{
+    //     color: $val
+    // }
+
+    .text-hover-#{$key}:hover{
+        &:hover { //rodzic selektor - &:rodzic
+            color: $val;
+        }
+        // &:nth-child(){
+
+        // }
+        // &:nth-child(2){
+
+        // }
+    }
+
     .bg-#{$key} {
         background-color: $val;
     }
@@ -12,10 +29,15 @@
         //light variations - petla for
         @for $i from 1 through 9 {
             .text-#{$key}-light-#{$i} { // kolor tekstu
-                color: mix(white, $val, $i * 10) //mixownie z bialym, kolor, procentowa mieszanka ile bialego 9 - najjasniejsze
+                color: mix(white, $val, $i * 10); //mixownie z bialym, kolor, procentowa mieszanka ile bialego 9 - najjasniejsze
+            }
+            .text-hover-#{$key}-light-#{$i}{
+                &:hover{
+                    color: mix(white, $val, $i * 10);
+                }
             }
             .bg-#{$key}-light-#{$i} { // tlo
-                background-color: mix(white, $val, $i * 10) //mixownie z bialym, kolor, procentowa mieszanka ile bialego 9 - najjasniejsze
+                background-color: mix(white, $val, $i * 10); //mixownie z bialym, kolor, procentowa mieszanka ile bialego 9 - najjasniejsze
             }
         }
 
@@ -23,6 +45,11 @@
         @for $i from 1 through 9 {
             .text-#{$key}-dark-#{$i} { // kolor tekstu
                 color: mix(white, $val, $i * 10) //mixownie z czarnym, kolor, procentowa mieszanka ile czarnego 9 - najciemniejsze
+            }
+            .text-hover-#{$key}-dark-#{$i}{
+                &:hover{
+                    color: mix(black, $val, $i * 10);
+                }
             }
             .bg-#{$key}-dark-#{$i} { // tlo
                 background-color: mix(black, $val, $i * 10) //mixownie z czarnym, kolor, procentowa mieszanka ile bialego 9 - najciemniejsze
