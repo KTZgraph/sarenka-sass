@@ -1,0 +1,13 @@
+// nadpisywanie zmian z biblioteki
+// zmienic nasluxhiwania w pliku gulpfile.js
+
+//!default za zmienna w scss w bibliotece pozwala na nadpisanie wartosci
+$primary:indigo;
+$base-padding: 1rem;
+$base-border-thickness: 3px;
+
+
+// zeby dane z biblioteki zostaly
+// @import 'sarenka-sass/index.scss'; //autmatycznie patrzy na plik index.scss
+@import 'sarenka-sass'; //autmatycznie patrzy na plik index.scss
+
