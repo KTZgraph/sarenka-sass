@@ -25,6 +25,11 @@ body {
     overflow: hidden;
 }
 
+/* nazwy bez spacji */
+.navigation.active{
+    width: 60px;
+}
+
 .navigation ul{
     position: absolute;
     top: 0;
@@ -91,6 +96,11 @@ body {
     min-height: 100vh;
     background: #f5f5f5;
     transition: 0.5s;
+}
+
+.main.active{
+    width: calc(100% - 60px);
+    left: 60px;
 }
 
 .main .topbar {
